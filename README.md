@@ -8,8 +8,10 @@ This code was adapted from [this Github](https://github.com/dagar/bluetooth-prox
 
 This code requires the `bluetooth` and `python-bluez` modules to be installed. On Ubuntu/Debian systems, this can usually be done with the following commands:
 
-        sudo apt-get install bluetooth
-        sudo apt-get install python-bluez
+```
+sudo apt-get install bluetooth
+sudo apt-get install python-bluez
+```
 
 *Note: Your system must also have a Bluetooth adapter.*
 
@@ -21,13 +23,29 @@ cd bluetooth-proximity
 sudo python setup.py install
 ```
 
-## Test
+## Examples
 
-A simple test script is available in the `tests` directory that will output the RSSI value of a Bluetooth address. 
+### test_address.py
 
-                python test_address.py <bluetooth-address> [number-of-requests]
+This is a simple script to scan and output the RSSI value of a Bluetooth address in a loop. This can be used to test if the code is working on your setup and also to output the detected RSSI values as you move your Bluetooth device closer/further from the Bluetooth adapter.
 
-This can be used to test if the code is working on your setup and also to output the detected RSSI values as you move your Bluetooth device closer/further from the Bluetooth adapter.
+Use `Ctrl + C` to exit the script or wait until number of loops has finished.
+
+```
+python test_address.py <bluetooth-address> [number-of-loops]
+```
+
+### bluetooth_scanner.py
+
+An example script that uses threads to scan for bluetooth addresses in a loop and invokes a callback function when the RSSI value is within a specified threshold.
+
+Edit the script and set the `BT_ADDR_LIST` variable to the list of bluetooth addresses to scan.
+
+Use `Ctrl + C` to exit the script.
+
+```
+python bluetooth_scanner.py
+```
 
 ## Notes
 
