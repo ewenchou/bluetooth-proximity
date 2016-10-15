@@ -3,7 +3,6 @@ from bt_proximity import BluetoothRSSI
 import datetime
 import time
 import threading
-import requests
 import sys
 
 # List of bluetooth addresses to scan
