@@ -9,6 +9,8 @@ import sys
 BT_ADDR_LIST = []
 DAILY = True  # Set to True to invoke callback only once per day per address
 DEBUG = True  # Set to True to print out debug messages
+THRESHOLD = (-10, 10)
+SLEEP = 1
 
 
 def dummy_callback():
@@ -46,8 +48,9 @@ def bluetooth_listen(
         if debug:
             print "---"
             print "addr: {}, rssi: {}".format(addr, rssi)
-        # Skip to next iteration if device not found
+        # Sleep and then skip to next iteration if device not found
         if rssi is None:
+            time.sleep(sleep)
             continue
         # Trigger if RSSI value is within threshold
         if threshold[0] < rssi < threshold[1]:
@@ -67,12 +70,22 @@ def bluetooth_listen(
         time.sleep(sleep)
 
 
-def start_thread(addr, daily=True, debug=False):
+def start_thread(addr, callback, threshold=THRESHOLD, sleep=SLEEP, 
+        daily=DAILY, debug=DEBUG):
     """Helper function that creates and starts a thread to listen for the
     bluetooth address.
     
     @param: addr: Bluetooth address
     @type: addr: str
+
+    @param: callback: Function to call when RSSI is within threshold
+    @param: callback: function
+
+    @param: threshold: Tuple of the high/low RSSI value to trigger callback
+    @type: threshold: tuple of int
+
+    @param: sleep: Time in seconds between RSSI scans
+    @type: sleep: int or float
 
     @param: daily: Daily flag to pass to `bluetooth_listen` function
     @type: daily: bool
@@ -88,9 +101,9 @@ def start_thread(addr, daily=True, debug=False):
         args=(), 
         kwargs={
             'addr': addr,
-            'threshold': (-10, 10),
-            'callback': dummy_callback,
-            'sleep': 1,
+            'threshold': threshold,
+            'callback': callback,
+            'sleep': sleep,
             'daily': daily,
             'debug': debug
         }
@@ -106,8 +119,12 @@ def main():
     if not BT_ADDR_LIST:
         print "Please edit this file and set BT_ADDR_LIST variable"
         sys.exit(1)
-    threads = [start_thread(a, daily=DAILY, debug=DEBUG) for a in BT_ADDR_LIST]
+    threads = []
+    for addr in BT_ADDR_LIST:
+        th = start_thread(addr=addr, callback=dummy_callback)
+        threads.append(th)
     while True:
+        # Keep main thread alive
         time.sleep(1)
 
 
