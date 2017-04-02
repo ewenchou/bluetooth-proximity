@@ -47,6 +47,16 @@ Use `Ctrl + C` to exit the script.
 python bluetooth_scanner.py
 ```
 
+### lnsm.py (Log Normal Shadowing Model)
+
+An example script to scan & output the distance between two bluetooth devices using the RSSI value . The distance between the two devices is calculated using the Log-Normal Shadowing Model/Log-Distance Pathloss Model.
+
+Use `Ctrl + C` to exit the script or wait until number of loops has finished. Recommended number of loops = 30
+
+```
+python lnsm.py <bluetooth-address> [number-of-loops]
+```
+
 ## Notes
 
 * The RSSI values returned will differ depending on your Bluetooth devices and your surroundings (e.g. are there walls/obstructions, multiple floors, etc). 
