@@ -38,7 +38,7 @@ def bluetooth_listen(
     @param: daily: Set to True to invoke callback only once per day
     @type: daily: bool
 
-    @param: debug: Set to True to print out debug messages and does not 
+    @param: debug: Set to True to print out debug messages and does not
                    actually sleep until tomorrow if `daily` is True.
     @type: debug: bool
     """
@@ -70,11 +70,11 @@ def bluetooth_listen(
         time.sleep(sleep)
 
 
-def start_thread(addr, callback, threshold=THRESHOLD, sleep=SLEEP, 
+def start_thread(addr, callback, threshold=THRESHOLD, sleep=SLEEP,
         daily=DAILY, debug=DEBUG):
     """Helper function that creates and starts a thread to listen for the
     bluetooth address.
-    
+
     @param: addr: Bluetooth address
     @type: addr: str
 
@@ -97,8 +97,8 @@ def start_thread(addr, callback, threshold=THRESHOLD, sleep=SLEEP,
     @rtype: threading.Thread
     """
     thread = threading.Thread(
-        target=bluetooth_listen, 
-        args=(), 
+        target=bluetooth_listen,
+        args=(),
         kwargs={
             'addr': addr,
             'threshold': threshold,

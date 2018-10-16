@@ -1,11 +1,11 @@
 # Log Normal Shadowing Model
 Python code for getting the static distance between bluetooth devices using the RSSI value.
 
-RSSI is measured in dBm but is in its raw form not really useful in an application (apart from being a diagnostic measurement). 
-The nice thing about RSSI is that we can translate the measurements to distance estimates in meters or centimeters. 
+RSSI is measured in dBm but is in its raw form not really useful in an application (apart from being a diagnostic measurement).
+The nice thing about RSSI is that we can translate the measurements to distance estimates in meters or centimeters.
 We can describe the relation between RSSI and distance using a model, the Log Normal Shadowing Model/ Log Distance Pathloss Model.
 
-### x = (RSSI_value-A0)/(-10*n)        
+### x = (RSSI_value-A0)/(-10*n)
 ### distance = ((10^x) * 100) + c
 
 A0 = Average RSSI value measured at a distance of 1m from  the transmitting device.

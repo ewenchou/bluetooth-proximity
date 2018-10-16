@@ -2,7 +2,7 @@ from bt_proximity import BluetoothRSSI
 import time
 import sys
 
-BT_ADDR = ''  # You can put your Bluetooth address here 
+BT_ADDR = ''  # You can put your Bluetooth address here
 NUM_LOOP = 1
 
 def print_usage():
