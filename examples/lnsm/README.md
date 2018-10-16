@@ -16,7 +16,7 @@ c = Environment Constant. It is a weight added to the distance inorder to reduce
 
 actual_dist = The static distance between the two bluetooth devices during measurement. This value is equal to the distance between the bluetooth devices. E.g: If the distance between the two devices is 20cm, the actual_dist = 20.
 
-You must first measure the avearge value of RSSI(A0) at 1m from the device. After this you must adjust the values of n & c to reduce the error.
+You must first measure the average value of RSSI(A0) at 1m from the device. After this you must adjust the values of n & c to reduce the error.
 In the example, the values of A0,n & c have been configured to work with a Motorola G4 Plus as the measured bluetooth device. Hence depending upon the bluetooth device being measured, the values of A0,n & c will change respectively.
 
 Following our model, in an ideal world, the RSSI value is only dependent on the distance between the two devices.
