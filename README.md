@@ -59,7 +59,7 @@ python lnsm.py <bluetooth-address> [number-of-loops]
 
 ## Notes
 
-* The RSSI values returned will differ depending on your Bluetooth devices and your surroundings (e.g. are there walls/obstructions, multiple floors, etc). 
+* The RSSI values returned will differ depending on your Bluetooth devices and your surroundings (e.g. are there walls/obstructions, multiple floors, etc).
 * Use the test script mentioned above to see what values are returned in your setup.
 * RSSI values may be positive or negative integers. You can use the absolute value (i.e. always positive) if you see both.
 
