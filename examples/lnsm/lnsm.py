@@ -40,12 +40,12 @@ def main():
             error = abs(actual_dist - distance)
             sum_error = sum_error + error
             avg_error = sum_error/count
-            print "Average Error=  " + str(avg_error)
-            print "Error=  " + str(error)
-            print "Approximate Distance:" + str(distance)
-            print "RSSI: " + str(rssi_bt)
-            print "Count: " + str(count)
-            print " "
+            print("Average Error=  " + str(avg_error))
+            print("Error=  " + str(error))
+            print("Approximate Distance:" + str(distance))
+            print("RSSI: " + str(rssi_bt))
+            print("Count: " + str(count))
+            print(" ")
         time.sleep(1)
 
 
@@ -53,4 +53,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
