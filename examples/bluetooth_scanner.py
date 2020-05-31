@@ -14,7 +14,7 @@ SLEEP = 1
 
 
 def dummy_callback():
-    print "Dummy callback function invoked"
+    print("Dummy callback function invoked")
 
 
 def bluetooth_listen(
@@ -46,8 +46,8 @@ def bluetooth_listen(
     while True:
         rssi = b.get_rssi()
         if debug:
-            print "---"
-            print "addr: {}, rssi: {}".format(addr, rssi)
+            print("---")
+            print("addr: {}, rssi: {}".format(addr, rssi))
         # Sleep and then skip to next iteration if device not found
         if rssi is None:
             time.sleep(sleep)
@@ -63,7 +63,7 @@ def bluetooth_listen(
                     datetime.timedelta(days=1)
                 until_tomorrow = (tomorrow - now).seconds
                 if debug:
-                    print "Seconds until tomorrow: {}".format(until_tomorrow)
+                    print("Seconds until tomorrow: {}".format(until_tomorrow))
                 else:
                     time.sleep(until_tomorrow)
         # Delay between iterations
@@ -117,7 +117,7 @@ def start_thread(addr, callback, threshold=THRESHOLD, sleep=SLEEP,
 
 def main():
     if not BT_ADDR_LIST:
-        print "Please edit this file and set BT_ADDR_LIST variable"
+        print("Please edit this file and set BT_ADDR_LIST variable")
         sys.exit(1)
     threads = []
     for addr in BT_ADDR_LIST:
