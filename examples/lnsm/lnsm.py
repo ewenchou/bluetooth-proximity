@@ -7,7 +7,7 @@ BT_ADDR = ''  # You can put your Bluetooth address here.  E.g: 'a4:70:d6:7d:ee:0
 NUM_LOOP = 30
 
 def print_usage():
-    print "Usage: python test_address.py <bluetooth-address> [number-of-requests]"
+    print("Usage: python test_address.py <bluetooth-address> [number-of-requests]")
 
 
 def main():
@@ -40,12 +40,12 @@ def main():
             error = abs(actual_dist - distance)
             sum_error = sum_error + error
             avg_error = sum_error/count
-            print "Average Error=  " + str(avg_error)
-            print "Error=  " + str(error)
-            print "Approximate Distance:" + str(distance)
-            print "RSSI: " + str(rssi_bt)
-            print "Count: " + str(count)
-            print " "
+            print("Average Error=  " + str(avg_error))
+            print("Error=  " + str(error))
+            print("Approximate Distance:" + str(distance))
+            print("RSSI: " + str(rssi_bt))
+            print("Count: " + str(count))
+            print(" ")
         time.sleep(1)
 
 
