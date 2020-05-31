@@ -6,7 +6,7 @@ BT_ADDR = ''  # You can put your Bluetooth address here
 NUM_LOOP = 1
 
 def print_usage():
-    print "Usage: python test_address.py <bluetooth-address> [number-of-requests]"
+    print("Usage: python test_address.py <bluetooth-address> [number-of-requests]")
 
 
 def main():
@@ -23,7 +23,7 @@ def main():
         num = NUM_LOOP
     btrssi = BluetoothRSSI(addr=addr)
     for i in range(0, num):
-        print btrssi.get_rssi()
+        print(btrssi.get_rssi())
         time.sleep(1)
 
 
